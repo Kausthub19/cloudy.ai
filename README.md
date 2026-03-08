@@ -33,3 +33,28 @@
 
  More detailed instructions will be added as the implementation evolves.
 
+ ## Deploy frontend to Vercel
+
+ Connect this repo to Vercel so the frontend is deployed and live on the web.
+
+ 1. **Go to [vercel.com](https://vercel.com)** and sign in with GitHub.
+ 2. **Import the repository**
+    - Click **Add New… → Project**.
+    - Select your GitHub account and the repo (e.g. `Kausthub19/cloudy.ai`).
+    - Click **Import**.
+ 3. **Configure the project**
+    - **Root Directory:** Click **Edit**, choose **frontend**, then **Continue**.
+      - This makes Vercel build and deploy only the `frontend/` app.
+    - **Framework Preset:** Vite (should be auto-detected).
+    - **Build Command:** `npm run build` (default).
+    - **Output Directory:** `dist` (default for Vite).
+    - **Install Command:** `npm install` (default).
+ 4. **(Optional) Environment variable**  
+    If you deploy the backend elsewhere and want the frontend to call it:
+    - Add a variable **Name:** `VITE_API_BASE_URL`, **Value:** `https://your-backend-url.com` (no trailing slash).
+ 5. Click **Deploy**.  
+    When it finishes, you get a URL like `https://cloudy-ai-xxx.vercel.app`.  
+    The `frontend/vercel.json` rewrites ensure routes like `/auth`, `/plans`, `/app` work on refresh and direct links.
+
+**Backend:** The API in `backend/` is not deployed by this flow. Run it locally, or deploy it to Railway, Render, Fly.io, etc., and set `VITE_API_BASE_URL` in Vercel to that URL.
+
