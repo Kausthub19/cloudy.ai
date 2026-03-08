@@ -8,8 +8,9 @@
      "preview": "vite preview",
      "lint": "eslint \"src/**/*.{ts,tsx}\""
    },
-   "dependencies": {
-     "react": "^18.2.0",
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.0",
+    "react": "^18.2.0",
      "react-dom": "^18.2.0",
      "react-router-dom": "^6.22.0"
    },
